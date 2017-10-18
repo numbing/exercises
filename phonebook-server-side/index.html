@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <a href="http://localhost:8000/addnewcontact">add new contact</a>
+
+  <h1>hello world</h1>
+  <div id="main">
+
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+      var main = document.querySelector("#main");
+      // here is the function load to make a requerst and it take url for the api request and a function done wich we called it later renderpeople
+      function load(url, done){
+       console.log(done)
+       var xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+
+         if(xhttp.status === 200){
+          console.log("ok");
+
+         }else{
+            console.log('there isproblem');
+            }
+
+         var data = JSON.parse(xhttp.responseText);
+        // here we call this done function inside to return a data to the function we make (renderpeople) and it takes a (people) so now people is = data;
+         done(data);
+
+
+        };
+        xhttp.open("GET", url, false);
+        xhttp.send();
+      }
+      function renderContact(people){
+         var name = people[0].firstname;
+         console.log(people)
+         console.log(name)
+
+         people.forEach(function(person){
+
+          var FirstName = person.firstName;
+          //console.log(Firstname)
+          let LastName = person.lastName;
+          let Phone = person.phone;
+          let Email = person.email;
+          table = document.querySelector("#main");
+          //let table = document.createElement("table");
+           //table.classList.add("table")
+              table.innerHTML +=  `
+
+                    <table
+                      <tr>
+                       <th scope="row">-</th>
+                        <td>${FirstName}</td>
+                        <td>${LastName}</td>
+                        <td>${Email}</td>
+                        <td>${Phone}</td>
+                      </tr>
+                    </table>
+
+                  `
+      //main.append(table);
+
+         })
+
+      }
+      load("http://localhost:8000/api", renderContact);
+  });
+
+</script>
+</body>
+</html>

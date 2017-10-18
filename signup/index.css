@@ -1,0 +1,9 @@
+#countainer{
+  background-color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+#btn{
+  width : 200px;
+}

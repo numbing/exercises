@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>cv maker</title>
+  <link rel="stylesheet" href="https:////code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+
+
+</head>
+<body>
+  <h1>here we create your cv for you</h1>
+
+  <div id="container">
+
+    <div id="personal">
+      <h2>personal question</h2>
+      <form id="form-personal">
+        please write your full name<br>
+        <input type="text" name="fullName"><br>
+        write your age<br>
+        <input type="text" name="age"><br>
+        <input type="radio" name="gender" value="male" checked> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+        <input type="radio" name="gender" value="other"> Other
+      </form>
+    </div>
+
+    <div id="education">
+    <h2>education</h2>
+      <form id="form-education">
+        <div class="formContainer">
+
+          position<br>
+          <input type="text" name="position"><br>
+          certificate<br>
+          <input type="text" name="certificate"><br>
+          start
+          <input type="date" class="start-edu">
+          end
+          <input type="date" class="end-edu"><br>
+        </div>
+      </form>
+      <button class="eduBtn" type="button">+</button>
+    </div>
+
+    <div id="experience">
+      <h2>work experience</h2>
+      <form id="formXp">
+        <div class="formContainer">
+          work title<br>
+          <input type="text" name="title"><br>
+          company name <br>
+          <input type="text" name="company"><br>
+           start
+          <input class="start-xp">
+          end
+          <input class="end-xp"><br>
+         </div>
+      </form>
+       <button id="expBtn" type="button">+</button>
+    </div>
+
+    <div id="skills">
+      <h2>skills</h2>
+      skills:
+      <input type="text" name="skills">
+      <select id="select-skills"></select>
+      <button id="skillsBtn" type="button">+</button>
+    </div>
+
+    <div id="languague">
+      <h2>languague</h2>
+      languague you speak:
+      <input type="text" name="languague">
+      <select id="select-lang"></select>
+      <button id="lngBtn" type="button">+</button>
+    </div>
+
+    <div id="hobbies">
+      <h2>hobby</h2>
+      write your hobbies:
+      <input type="text" name="hobbies">
+      <button id="hobBtn" type="button">+</button>
+    </div>
+
+    <div id="contact">
+      <h2>contact</h2>
+      city :
+      <input type="text" name="city"><br>
+      zip code :
+      <input type="text" name="zip-code"><br>
+      phone number :
+      <input  name="phone"><br>
+      email :
+      <input  name="email"><br>
+    </div>
+
+
+    <div id="link">
+      <h2>links</h2>
+      linkdin or any link :
+      <input  name="links">
+      <button id="linkBtn" type="button">+</button>
+    </div>
+
+
+  </div>
+
+
+</body>
+</html>
